@@ -1,14 +1,12 @@
 # Academic Email Checker
 
-This repository contains a Python script that checks whether an email address is associated with an academic institution.
-
-The script prompts users to enter an email address, and it verifies the domain against a list of known academic and public domains.
+This repository contains a Python script that checks whether an email address is associated with an academic institution. The script prompts users to enter an email address, and it verifies the domain against a list of known academic and public domains.
 
 ## Algorithm description
 
 ![algorithm_description](./img/algorithm_description.jpg)
 
-Part I: Email Verification
+### Part I: Email Verification
 1. < Start: User enters their email address >.
 2. Extract the domain part of the email address (e.g., "university.edu" from "johndoe@university.edu") and proceed to step 3.
 3. Compare the email domain against the list of public domains. If a match is found, request the user to provide an email address affiliated with an academic institution. Otherwise, move to step 4. `This check should reduce the number of addresses fallen into the manual check.`
@@ -16,7 +14,7 @@ Part I: Email Verification
 5. Examine the email domain for the “.ac.”, “.edu.” substrings or ending for the “.edu”. If either is present, it is highly likely an academic email address, so send the verification link. If not, continue to step 6.
 6. If the domain does not appear in either the public or academic domain lists, flag the email for manual verification. `This step accommodates unusual cases and minimizes false negatives.`
 
-Part II: Affiliation Confirmation
+### Part II: Affiliation Confirmation
 1. < Start: User clicks on the verification link >.
 2. Retrieve the corresponding affiliation and ask the user if the recorded information for their domain is accurate. If so, link the affiliation to their account. If not, proceed to step 3.
 3. Prompt the user to provide the correct affiliation name and country. Flag it for the manual verification.
@@ -46,12 +44,12 @@ Part II: Affiliation Confirmation
 
 To populate the **academic_domains** table, might use the university-domains-list repository (https://github.com/Hipo/university-domains-list) as a starting point.
 
-To populate the **public_domains** table, might use a list of common public email domains. Refer to this example list of common public email domains for the prototype: https://gist.github.com/tbrianjones/5992856.
+To populate the **public_domains** table, might use a list of common public email domains. (https://gist.github.com/tbrianjones/5992856) used as an example for the prototype.
 
 ## Requirements
 
 - Python 3.x
-- CSV files containing academic and public email domains
+- CSV files containing academic and public email domains (comes with the data folder)
 
 ## Run the script
 
