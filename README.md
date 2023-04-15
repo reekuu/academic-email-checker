@@ -4,6 +4,14 @@ This repository contains a Python script that checks whether an email address is
 
 The script prompts users to enter an email address, and it verifies the domain against a list of known academic and public domains.
 
+## Algorithm
+
+![algorithm_description](./img/algorithm_description.jpg)
+
+## Data Schema
+
+![data_description](./img/data_description.png)
+
 ## Data Sources
 
 - academic_domains: https://github.com/Hipo/university-domains-list
