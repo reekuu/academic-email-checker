@@ -25,19 +25,20 @@ def main(email=None, user_input=''):
             if row['domain'] == domain:
                 # If the domain is found, confirm the affiliation and country
                 affiliation = row['name']
-                user_input = input(f'\nIs {affiliation}, {row["country"]} your primary affiliation? (yes/no) ')
+                user_input = input(f'\n[{affiliation}, {row["country"]}] is your primary affiliation? (yes/no) ')
                 break
 
     if user_input.lower() not in {'y', 'yes'}:
-        affiliation = input('\nWhat is the name of your primary affiliation?: ')
-        country = input('\nWhat is the country of your primary affiliation?: ')
+        print('''\nPlease provide us with information about your affiliation: ''')
+        affiliation = input('\nName of affiliation: ')
+        country = input('\nCountry: ')
         # Add the domain and affiliation to the domains for moderation file
         append_row_to_csv(DOMAINS_FOR_MODERATION_FILE, [domain, affiliation, country])
-        print('\n[INFO]', f'({domain}, {affiliation}, {country}) recorded for the manual moderation.')
+        print('\n[INFO]', f'[{domain}, {affiliation}, {country}] recorded for the manual moderation.')
 
     # Add the email address and affiliation to the users file
     append_row_to_csv(USERS_FILE, [email, affiliation])
-    print('\n[INFO]', f'({email}, {affiliation}) new user record successfully added.')
+    print('\n[INFO]', f'New user record [{email}, {affiliation}] is successfully added.')
 
 
 if __name__ == '__main__':
