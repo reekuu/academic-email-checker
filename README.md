@@ -2,6 +2,8 @@
 
 This repository contains a Python script that checks whether an email address is associated with an academic institution. The script prompts users to enter an email address, and it verifies the domain against a list of known academic and public domains.
 
+To simplify the prototype, CSV files are used instead of tables, but the description of the interaction with the database implies that it will use tables in production.
+
 ## Algorithm description
 
 ![algorithm_description](./img/algorithm_description.jpg)
